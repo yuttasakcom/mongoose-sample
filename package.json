@@ -1,0 +1,25 @@
+{
+  "name": "mongo101",
+  "version": "1.0.0",
+  "description": "## Table of Contents - Core Fundamentals of MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuttasakcom/mongo101.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuttasakcom/mongo101/issues"
+  },
+  "homepage": "https://github.com/yuttasakcom/mongo101#readme",
+  "dependencies": {
+    "mocha": "^3.5.0",
+    "mongoose": "^4.11.7",
+    "nodemon": "^1.11.0"
+  }
+}
