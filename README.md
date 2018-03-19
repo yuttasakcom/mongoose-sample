@@ -6,6 +6,7 @@ http://mongoosejs.com/
 
 * [Introduction](#introduction)
 * [Install](#install)
+* [Connection](#connection)
 
 ## Introduction
 
@@ -25,5 +26,16 @@ query building, business logic hooks and more, out of the box.
 ## Install
 
 ```bash
-$ npm install mongoose
+$ yarn add mongoose or npm i -S mongoose
+```
+
+## Connection
+
+```javascript
+const mongoose = require('mongoose')
+
+mongoose.connect('mongodb://localhost/users_test')
+mongoose.connection
+  .once('open', () => console.log('Good to go!'))
+  .on('error', err => console.error(err))
 ```
