@@ -1,5 +1,7 @@
-## Mongo 101
+# Mongoose Manual
+
+http://mongoosejs.com/
 
 ## Table of Contents
-- Core Fundamentals of MongoDB
-- A Test Drivent Experience
+
+* Intruduction
