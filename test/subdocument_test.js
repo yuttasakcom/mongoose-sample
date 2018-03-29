@@ -1,5 +1,4 @@
 /* global describe it */
-
 const assert = require('assert')
 const User = require('../src/user')
 
@@ -46,7 +45,13 @@ describe('Subdocuments', () => {
     joe.save()
       .then(() => User.findOne({ name: 'Joe' }))
       .then(user => {
-        console.log(user)
+        const post = user.posts[0]
+        post.remove()
+        return user.save()
+      })
+      .then(() => User.findOne({ name: 'Joe' }))
+      .then(user => {
+        assert(user.posts.length === 0)
         done()
       })
   })
