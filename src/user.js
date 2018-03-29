@@ -11,8 +11,22 @@ const UserSchema = new Schema({
     },
     required: [true, 'Name is required.']
   },
-  postCount: Number,
-  posts: [PostSchema]
+  posts: [PostSchema],
+  likes: Number,
+  blogPosts: [{
+    type: Schema.Types.ObjectId,
+    ref: 'blogPost'
+  }]
+})
+
+UserSchema.virtual('postCount').get(function () {
+  return this.posts.length
+})
+
+UserSchema.pre('remove', function (next) {
+  const BlogPost = mongoose.model('blogPost')
+  BlogPost.remove({ _id: { $in: this.blogPosts } })
+    .then(() => next())
 })
 
 const User = mongoose.model('user', UserSchema)
